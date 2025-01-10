@@ -258,7 +258,7 @@ function serveHtmlPage() {
 
 /**
  * 2. GET /api/listByUsernamePattern
- *    拉取 @chatgpt.nyc.mn 域的所有用户，正则判断用户名是否10位字母或数字
+ *    拉取 @chatgpt.nyc.mn 域的所有用户，正则判断用户名是否8位字母或数字
  */
 async function listByUsernamePattern() {
   try {
@@ -266,7 +266,7 @@ async function listByUsernamePattern() {
     // 先获取所有用户 (domain=chatgpt.nyc.mn)
     const allUsers = await listAllUsers(accessToken, 'chatgpt.nyc.mn')
 
-    // 正则：用户名必须是10位字母或数字
+    // 正则：用户名必须是8位字母或数字
     const usernameRegex = /^[A-Za-z0-9]{8}$/
 
     // 筛选符合域名 + 用户名正则
